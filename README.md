@@ -7,7 +7,7 @@ Installing this library is super easy! There are two ways you can do it.
 
 * Install the _<span style="color:#bac21b">TableIt.py</span>_ file into each of you project's directories. <span style="color:#f23838"> This solution doesn't allow repeated use, you only have to do it for each project.</span>
 
-* Install the _<span style="color:#bac21b">TableIt.py</span>_ file into your <span style="color:#bac21b"><Directory to python>\Python\Python38-32\Lib\site-packages</span> path (note that your path will most likely have a different version of python and your python installation may come from a different place). <span style="color:#0ff26a">This solution allows repeated use, you only have to do it once.</span>
+* Install the _<span style="color:#bac21b">TableIt.py</span>_ file into your <span style="color:#bac21b">\<Directory to python\>\Python\Python38-32\Lib\site-packages</span> path (note that your path will most likely have a different version of python and your python installation may come from a different place). <span style="color:#0ff26a">This solution allows repeated use, you only have to do it once.</span>
 
 ## <span style="color:#22b6e3">Intro</span>
 TableIt is a free open-source python library that prints arrays as tables to the console.

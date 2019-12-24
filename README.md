@@ -116,3 +116,7 @@ I don't have lots of plans but some things that would definitely be worth consid
 
 ## <span style="color:#22b6e3">Go Print Tables!</span>
 That's enough of me talking! Go print some beautiful tables!
+
+## Known Issues
+These are the issues that I know of:
+* When you call the function it converts each element into a string **I am working on this as you read this**

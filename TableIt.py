@@ -8,9 +8,11 @@ def printTable(matrix, useFieldNames):
 
     finalTable = []
     newMatrix = []
+    matrixToBePrinted = []
     for i in range(rows):
+        matrixToBePrinted.append([])
         for j in range(cols):
-            matrix[i][j] = str(matrix[i][j])
+            matrixToBePrinted[i].append(str(matrix[i][j]))
             newMatrix.append(len(str(matrix[i][j])))
     newMatrix.sort()
     largestElementLength = newMatrix[-1]
@@ -18,8 +20,8 @@ def printTable(matrix, useFieldNames):
     for i in range(rows):
         currentRow = ""
         for j in range(cols):
-            currentEl = " " + matrix[i][j]
-            if (largestElementLength != len(matrix[i][j])):
+            currentEl = " " + matrixToBePrinted[i][j]
+            if (largestElementLength != len(matrixToBePrinted[i][j])):
                 # equal to len of currentEl, the other 1 goes so that
                 # there will be one space on the end of
                 currentEl = currentEl + " " * (largestElementLength - len(currentEl) + 2) + "|"

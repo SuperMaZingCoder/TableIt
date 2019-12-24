@@ -119,4 +119,7 @@ That's enough of me talking! Go print some beautiful tables!
 
 ## Known Issues
 These are the issues that I know of:
-* When you call the function it converts each element into a string **I am working on this as you read this**
+* No known issues
+
+## Fixed Issues
+* When you call the function it no longer converts each element into a string 

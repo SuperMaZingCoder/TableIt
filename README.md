@@ -1,7 +1,5 @@
 # TableIt
 
-___
-
 ## <span style="color:#22b6e3">Installation</span>
 Installing this library is super easy! There are two ways you can do it.
 

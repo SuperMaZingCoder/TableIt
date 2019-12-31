@@ -112,6 +112,7 @@ Then you can be happy knowing that you get lots of added beauty for using one ex
 ## <span style="color:#22b6e3">Future Goals</span>
 I don't have lots of plans but some things that would definitely be worth considering are:
 * Adding an option for the elements in the table to be centered
+* Adding an option for the table attributes (both on the top and on the side) to be colored - currently being worked on as you read this
 
 ## Known Issues
 These are the issues that I know of:

@@ -79,7 +79,7 @@ If you wan't to you can have fields on the sides. All you have to do is:
 myList = [
     ["", "a", "b"],
     ["x", "a + x", "a + b"],
-    ["z" "a + z", "z + b"]
+    ["z", "a + z", "z + b"]
 ]
 ```
 From that, you get:

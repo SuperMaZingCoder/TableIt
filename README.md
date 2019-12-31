@@ -109,10 +109,19 @@ print(myTable)
 
 Then you can be happy knowing that you get lots of added beauty for using one extra line of code.
 
+## Release Log
+This is the list of updates which were not on my goals list or on the issues list:
+* `useFieldNames` defaults to `False`
+* `color` defaults to `None`
+
 ## <span style="color:#22b6e3">Future Goals</span>
 I don't have lots of plans but some things that would definitely be worth considering are:
 * Adding an option for the elements in the table to be centered
-* Adding an option for the table attributes (both on the top and on the side) to be colored - I just finished writing the code for this and now have to update the documentation and update the code. This should be done in the next 24 hours.
+* Adding an option to choose whether the colors are on the top, side, or both - I am currently working on this
+
+## Accomplished Goals
+These are goals that I preiously had which I achieved:
+* Colors are now an option in the table
 
 ## Known Issues
 These are the issues that I know of:

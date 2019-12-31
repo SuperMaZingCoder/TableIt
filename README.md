@@ -101,7 +101,7 @@ From that, you get:
 ```
 
 ## Using colors
-You might want to use colors in TableIt. Using colors is an experimental feature that might not work for you. I have tested it in IDLE, it doesn't work there. I have also tested it in the Windows Command Prompt, it doesn't work there either. However I have tested it in VS Code, it does work there. In conclusion, more feature-rich terminals should be able to use the colors.
+You might want to use colors in TableIt. Using colors is an experimental feature that might not work for you, but, you can think of it like a bonus because I don't know other table libraries that can do this. I have tested it in the normal python IDLE, it doesn't work there. I have also tested it in the Windows Command Prompt, it doesn't work there either. However I have tested it in VS Code, it does work there. I'm not sure if it will work on Apple or Linux machines. In general, more feature-rich terminals should be able to use the colors.
 
 To use them simply use RGB values, so, using the example from above:
 ```python

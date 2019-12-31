@@ -60,6 +60,7 @@ myList = [
 
 Then simply print it! Choose wehter or not you would like field names (use <span style="color:#f79914">True</span> or <span style="color:#f79914">False</span>)
 ```python
+# NOTE: useFieldNames defaults to False, so, if you don't type useFieldNames=True it automatically goes to False
 TableIt.printTable(myList, useFieldNames=True)
 ```
 
@@ -74,7 +75,7 @@ As output, you get:
 +-----------------------------------------------+
 ```
 
-If you wan't to you can have fields on the sides. All you have to do is:
+Another example:
 ```python
 myList = [
     ["", "a", "b"],
@@ -100,7 +101,8 @@ import TableIt
 ```
 and then:
 ```python
-TableIt.printTable(myTable, fieldNames=False)
+# NOTE: You don't have to write fieldNames = False because it defaults to False
+TableIt.printTable(myTable, useFieldNames=False)
 ```
 instead of:
 ```

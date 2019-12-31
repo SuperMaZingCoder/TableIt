@@ -121,6 +121,10 @@ As output you get:
 
 ![](ImagesInREADME/TableIt_Colors.png)
 
+You don't have to hard code in the RGB values for the color each time, you can store the color in a variable:
+```python
+cyan = (26, 156, 171)
+```
 
 ## <span style="color:#22b6e3">Uses For TableIt</span>
 There are many uses for TableIt. I first created it as an output library for printing out matrices, since then I've found much more functionality. I recommend using this library any time you would like something formatted nicely for the user. If you just want to print out an array and don't care how it looks, then you probably don't have to use it. However, if you feel like taking the 2 extra seconds to:

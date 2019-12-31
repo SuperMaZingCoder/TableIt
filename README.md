@@ -113,13 +113,13 @@ Then you can be happy knowing that you get lots of added beauty for using one ex
 I don't have lots of plans but some things that would definitely be worth considering are:
 * Adding an option for the elements in the table to be centered
 
-
-## <span style="color:#22b6e3">Go Print Tables!</span>
-That's enough of me talking! Go print some beautiful tables!
-
 ## Known Issues
 These are the issues that I know of:
 * No known issues
 
 ## Fixed Issues
 * When you call the function it no longer converts each element into a string 
+
+
+## <span style="color:#22b6e3">Go Print Tables!</span>
+That's enough of me talking! Go print some beautiful tables!

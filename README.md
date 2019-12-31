@@ -118,7 +118,7 @@ TableIt.printTable(myList, useFieldNames=True, color=(26, 156, 171))
 ```
 
 As output you get:
-
+[](ImagesInREADME/TableIt_Colors.png)
 
 
 ## <span style="color:#22b6e3">Uses For TableIt</span>

@@ -101,7 +101,7 @@ import TableIt
 ```
 and then:
 ```python
-# NOTE: You don't have to write fieldNames = False because it defaults to False
+# NOTE: You don't have to write useFieldNames = False because it defaults to False
 TableIt.printTable(myTable, useFieldNames=False)
 ```
 instead of:

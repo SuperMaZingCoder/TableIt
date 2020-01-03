@@ -101,11 +101,13 @@ From that, you get:
 ```
 
 ## Using colors
-You might want to use colors in TableIt. Using colors is an experimental feature that might not work for you, but, you can think of it like a bonus because I don't know other table libraries that can do this. I have tested it in the normal python IDLE, it doesn't work there. I have also tested it in the Windows Command Prompt, it doesn't work there either. However I have tested it in VS Code, it does work there. I'm not sure if it will work on Apple or Linux machines. In general, more feature-rich terminals should be able to use the colors.
+You might want to use colors in TableIt. Using colors is an experimental feature that might not work for you, but, you can think of it like a bonus because I don't know other table libraries that can do this. I have tested it in the normal python IDLE, it doesn't work there. I have also tested it in the Windows Command Prompt, it works there to (as long as you run the initColors() function mentioned below). I also tested it in VS Code, it does work there. I'm not sure if it will work on Apple or Linux machines. In general, more feature-rich terminals should be able to use the colors.
 
 To use them simply use RGB values, so, using the example from above:
 ```python
 import TableIt
+
+TableIt.initColors()
 
 myList = [
     ["", "a", "b"],
@@ -125,6 +127,8 @@ You don't have to hard code in the RGB values for the color each time, you can s
 ```python
 cyan = (26, 156, 171)
 ```
+
+#### The initColors() function clears all output and should be run before all previous printing. It enables it to work on certain command lines.
 
 ## <span style="color:#22b6e3">Uses For TableIt</span>
 There are many uses for TableIt. I first created it as an output library for printing out matrices, since then I've found much more functionality. I recommend using this library any time you would like something formatted nicely for the user. If you just want to print out an array and don't care how it looks, then you probably don't have to use it. However, if you feel like taking the 2 extra seconds to:

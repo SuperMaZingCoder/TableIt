@@ -151,7 +151,7 @@ This is the list of updates which were not on my goals list or on the issues lis
 * `useFieldNames` defaults to `False`
 * `color` defaults to `None`
 
-## <span style="color:#22b6e3">Future Goals</span>
+## Future Goals
 I don't have lots of plans but some things that would definitely be worth considering are:
 * Adding an option for the elements in the table to be centered
 * Adding an option to choose whether the colors are on the top, side, or both

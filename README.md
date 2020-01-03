@@ -156,6 +156,8 @@ I don't have lots of plans but some things that would definitely be worth consid
 * Adding an option for the elements in the table to be centered
 * Adding an option to choose whether the colors are on the top, side, or both
 * Adding default colors so that you don't have to choose RGB values (defaults like red, shades of blue and green, orange and yellow, etc.)
+* Complete rewrite of library structure
+* Complete rewrite of documentation
 
 ## Accomplished Goals
 These are goals that I preiously had which I achieved:

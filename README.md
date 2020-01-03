@@ -147,7 +147,8 @@ print(myTable)
 Then you can be happy knowing that you get lots of added beauty for using one extra line of code.
 
 ## Release Log
-This is the list of updates which were not on my goals list or on the issues list:
+This is the list of updates which were not on my goals list or on the issues list (top of list is newer):
+* Added `initColors()` function to allow the colors option to work on more systems
 * `useFieldNames` defaults to `False`
 * `color` defaults to `None`
 

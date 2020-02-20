@@ -151,6 +151,7 @@ This is the list of updates which were not on my goals list or on the issues lis
 * Added `initColors()` function to allow the colors option to work on more systems
 * `useFieldNames` defaults to `False`
 * `color` defaults to `None`
+* Added a license
 
 ## Future Goals
 I don't have lots of plans but some things that would definitely be worth considering are:

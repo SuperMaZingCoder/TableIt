@@ -10,7 +10,7 @@ def findLargestElement(rows, cols, lengthArray, matrix):
     for i in range(rows):  
         # Loop through each column
         for j in range(cols):
-            lengthArray.append(len(matrix[i][j]))
+            lengthArray.append(len(str(matrix[i][j])))
     # Sort the length matrix so that we can find the element with the longest length
     lengthArray.sort()
     # Store that length

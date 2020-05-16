@@ -175,3 +175,6 @@ These are the issues that I know of:
 
 ## <span style="color:#22b6e3">Go Print Tables!</span>
 That's enough of me talking! Go print some beautiful tables!
+
+## Support me on patreon!
+Here is the link to my patreon page: https://www.patreon.com/supermazingcoder :D

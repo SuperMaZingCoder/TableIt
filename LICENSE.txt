@@ -1,0 +1,10 @@
+BEAST OPENSOURCE LICENSE
+version 1.0, 20 february 2020
+
+TERMS AND CONDITIONS
+
+Any person is hereby granted permission to download, copy, compile, or study the source code for learning purposes. However, no person is 
+allowed to sell, or distribute this code for any purpose. Modification is allowed as long as it is only for personal use and will never be 
+redistributed in any way. Permission to use this code within a larger project may be allowed with the written consent of the author of this project which this license is placed upon.
+    
+END OF TERMS AND CONDITIONS

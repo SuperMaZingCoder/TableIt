@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 with open("README.md") as mdfile:
     long_description = mdfile.read()
 
-with open("LICENSE.txt") as mdfile:
+with open("LICENSE") as mdfile:
     lisence = mdfile.read()
 
 
@@ -26,6 +26,6 @@ setup(
         "Natural Language :: English",
         "Programming Language :: Python :: 3.0",
         "Topic :: Printing",
-        
+
     ]
 )

@@ -1,6 +1,7 @@
 import os
 import math
 import random
+from . import colors
 
 def initColors():
     os.system("cls")

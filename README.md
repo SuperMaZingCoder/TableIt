@@ -127,6 +127,13 @@ You don't have to hard code in the RGB values for the color each time, you can s
 ```python
 cyan = (26, 156, 171)
 ```
+alternativly you can use one of the predifined colors witch can be done by:
+```python
+TableIt.printTable(myList, useFieldNames=True, color=TableIt.colors.dark_cyan)
+```
+As output you get:
+
+![](ImagesInREADME/TableIt_Colors.png)
 
 #### The initColors() function clears all output and should be run before all previous printing. It enables it to work on certain command lines.
 
@@ -157,13 +164,13 @@ This is the list of updates which were not on my goals list or on the issues lis
 I don't have lots of plans but some things that would definitely be worth considering are:
 * Adding an option for the elements in the table to be centered
 * Adding an option to choose whether the colors are on the top, side, or both
-* Adding default colors so that you don't have to choose RGB values (defaults like red, shades of blue and green, orange and yellow, etc.)
 * Complete rewrite of library structure
 * Complete rewrite of documentation
 
 ## Accomplished Goals
 These are goals that I preiously had which I achieved:
 * Colors are now an option in the table
+* Adding default colors so that you don't have to choose RGB values (defaults like red, shades of blue and green, orange and yellow, etc.)
 
 ## Known Issues
 These are the issues that I know of:

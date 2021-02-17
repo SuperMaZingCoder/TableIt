@@ -3,6 +3,10 @@ import math
 import random
 from . import colors
 
+left = 0
+right = 2
+centre = 1
+
 def initColors():
     os.system("cls")
 
@@ -30,14 +34,47 @@ def createMatrix(rows, cols, matrixToWorkOn, matrix):
             # Add a each column of the current row (in string form) to matrixToWorkOn
             matrixToWorkOn[i].append(str(matrix[i][j]))
 
-def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalTable, color):
+def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalTable, color, alinement):
+
+    def getSideSpacings(alinement, largestElementLength, currentEl_length):
+        "cumpute the left and right spacings for alinement"
+        if alinement == 0 or alinement == "left":
+            return 0, (largestElementLength - currentEl_length + 2)
+
+        elif alinement == 2 or alinement == "right":
+            return (largestElementLength - currentEl_length + 1), 1
+
+        elif alinement == 1 or alinement == "center":
+            a =  math.floor((largestElementLength - currentEl_length + 1)/2)
+            b = (largestElementLength - currentEl_length + 1) - a + 1
+            return a, b
+        else:
+            raise ValueError (f"unknown alinement: alinement must be 'right', 'left' or 'center' not {alinement}")
 
     # Loop through each row
     for i in range(rows):
+        
+        if isinstance(alinement, (list, tuple)):
+            if len(alinement) >= i+1:
+                rowAlinement = alinement[i]
+            else:
+                rowAlinement = alinement[len(alinement)-1]
+        else:
+            rowAlinement = alinement
+
         # Initialize the row that will we work on currently as a blank string
         currentRow = ""
         # Loop trhough each column
         for j in range(cols):
+
+            if isinstance(rowAlinement, (list, tuple)):
+                if len(rowAlinement) >= j+1:
+                    colAlinement = rowAlinement[j]
+                else:
+                    colAlinement = rowAlinement[len(rowAlinement)-1]
+            else:
+                colAlinement = rowAlinement
+
             # If we are using colors then do the same thing but as without (below)
             if ((color != None) and (j == 0 or i == 0)):
                 # Only add color if it is in the first column or first row
@@ -47,18 +84,21 @@ def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalT
                 currentEl = " " + matrixToWorkOn[i][j]
 
             # If the raw element is less than the largest length of a raw element (raw element is just the unformatted element passed in)
-            if (largestElementLength != len(matrixToWorkOn[i][j])):
+            if (largestElementLength != len(str(matrixToWorkOn[i][j]))):
                 # If we are using colors then add the amount of spaces that is equal to the difference of the largest element length and the current element (minus the length that is added for the color)
                 # * The plus two here comes from the one space we would normally need and the fact that we need to account for a space that tbe current element already has
                 if (color != None):
                     if (j == 0 or i == 0):
-                        currentEl = currentEl + " " * (largestElementLength - (len(currentEl) - len("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m" + "\033[0m")) + 2) + "|"
+                        leftSpace, rightSpace = getSideSpacings(colAlinement, largestElementLength, (len(currentEl) - len("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m" + "\033[0m")))
+                        currentEl = " " * leftSpace + currentEl + " " * rightSpace + "|"
                     # If it is not the first column or first row than it doesn't need to subtract the color length
                     else:
-                        currentEl = currentEl + " " * (largestElementLength - len(currentEl) + 2) + "|"
+                        leftSpace, rightSpace = getSideSpacings(colAlinement, largestElementLength, len(currentEl))
+                        currentEl = " " * leftSpace + currentEl + " " * rightSpace + "|"
                 # If we are not using color just do the same thing as above when we were using colors for when the row or column is not the first each time
                 else:
-                    currentEl = currentEl + " " * (largestElementLength - len(currentEl) + 2) + "|"
+                    leftSpace, rightSpace = getSideSpacings(colAlinement, largestElementLength, len(currentEl))
+                    currentEl = " " * leftSpace + currentEl + " " * rightSpace + "|"
             # If the raw element length us equal to the largest length of a raw element then we don't need to add extra spaces
             else:
                 currentEl = currentEl + " " + "|"
@@ -112,7 +152,7 @@ def printRowsInTable(finalTable):
     for row in finalTable:
         print(row)
 
-def printTable(matrix, useFieldNames=False, color=None):
+def printTable(matrix, useFieldNames=False, color=None, alignment=0):
     # Rows equal amount of lists inside greater list
     rows = len(matrix)
     # Cols equal amount of elements inside each list
@@ -130,7 +170,7 @@ def printTable(matrix, useFieldNames=False, color=None):
 
     largestElementLength = findLargestElement(rows, cols, lengthArray, matrix)
     createMatrix(rows, cols, matrixToWorkOn, matrix)
-    rowLength = makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalTable, color)
+    rowLength = makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalTable, color, alignment)
     createWrappingRows(rowLength, finalTable)
     if (useFieldNames):
         createRowUnderFields(largestElementLength, cols, finalTable)

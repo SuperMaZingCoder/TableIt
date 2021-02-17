@@ -135,6 +135,26 @@ As output you get:
 
 ![](ImagesInREADME/TableIt_Colors.png)
 
+## Setting alignment
+the `alignment` parameter allows you to specify weather the elements of the table are allined to the left (TableIt.left), the right (TableIt.right) or the centre (TableIt.centre). 
+
+the simplest way of doing so will aline all the elements in the same way like so:
+```python
+TableIt.printTable(myList, useFieldNames=True, alignment=TableIt.centre)
+```
+witch will create the following table:
+
+![](ImagesInREADME/simpleCentreAlinement.png)
+
+however you can alsow aline every element indevidualy by passing a list shuld the list ever be out of range the last valid element of the alignment list will be used. shuld the alignment for a given column not be a list the alignment will be used for the entire column. so:
+```python
+TableIt.printTable(myList, useFieldNames=True,  alignment=[[TableIt.centre,
+																								  [TableIt.left, TableIt.right]])````
+could result in:
+
+![](ImagesInREADME/advancedAlignment.png)
+
+
 #### The initColors() function clears all output and should be run before all previous printing. It enables it to work on certain command lines.
 
 ## <span style="color:#22b6e3">Uses For TableIt</span>
@@ -162,13 +182,13 @@ This is the list of updates which were not on my goals list or on the issues lis
 
 ## Future Goals
 I don't have lots of plans but some things that would definitely be worth considering are:
-* Adding an option for the elements in the table to be centered
 * Adding an option to choose whether the colors are on the top, side, or both
 * Complete rewrite of library structure
 * Complete rewrite of documentation
 
 ## Accomplished Goals
 These are goals that I preiously had which I achieved:
+* Adding an option for the elements in the table to be centered
 * Colors are now an option in the table
 * Adding default colors so that you don't have to choose RGB values (defaults like red, shades of blue and green, orange and yellow, etc.)
 

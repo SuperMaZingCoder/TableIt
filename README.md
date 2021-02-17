@@ -150,7 +150,7 @@ however you can alsow aline every element indevidualy by passing a list shuld th
 ```python
 TableIt.printTable(myList, useFieldNames=True,  alignment=[[TableIt.centre,[TableIt.left, TableIt.right]])
 ```
-																		```
+																		
 could result in:
 
 ![](ImagesInREADME/advancedAlignment.png)

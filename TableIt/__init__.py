@@ -34,7 +34,7 @@ def createMatrix(rows, cols, matrixToWorkOn, matrix):
             # Add a each column of the current row (in string form) to matrixToWorkOn
             matrixToWorkOn[i].append(str(matrix[i][j]))
 
-def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalTable, color, alinement):
+def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalTable, colors, alinement):
 
     def getSideSpacings(alinement, largestElementLength, currentEl_length):
         "cumpute the left and right spacings for alinement"
@@ -61,6 +61,11 @@ def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalT
                 rowAlinement = alinement[len(alinement)-1]
         else:
             rowAlinement = alinement
+        
+        if len(colors) >= i+1:
+            rowColors = colors[i]
+        else:
+            rowColors = colors[len(colors)-1]
 
         # Initialize the row that will we work on currently as a blank string
         currentRow = ""
@@ -75,8 +80,16 @@ def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalT
             else:
                 colAlinement = rowAlinement
 
+            if isinstance(rowColors, (list)):
+                if len(rowColors) >= j+1:
+                    color = rowColors[j]
+                else:
+                    color = rowColors[len(rowColors)-1]
+            else:
+                color = rowColors
+
             # If we are using colors then do the same thing but as without (below)
-            if ((color != None) and (j == 0 or i == 0)):
+            if (color != None):
                 # Only add color if it is in the first column or first row
                 currentEl = " " + "\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) +"m" + matrixToWorkOn[i][j] + "\033[0m"
             # If we are not using colors (or j != 0 or i != 0) just add a space and the element that should be in that position to a variable which will store the current element to work on
@@ -88,13 +101,8 @@ def makeRows(rows, cols, largestElementLength, rowLength, matrixToWorkOn, finalT
                 # If we are using colors then add the amount of spaces that is equal to the difference of the largest element length and the current element (minus the length that is added for the color)
                 # * The plus two here comes from the one space we would normally need and the fact that we need to account for a space that tbe current element already has
                 if (color != None):
-                    if (j == 0 or i == 0):
-                        leftSpace, rightSpace = getSideSpacings(colAlinement, largestElementLength, (len(currentEl) - len("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m" + "\033[0m")))
-                        currentEl = " " * leftSpace + currentEl + " " * rightSpace + "|"
-                    # If it is not the first column or first row than it doesn't need to subtract the color length
-                    else:
-                        leftSpace, rightSpace = getSideSpacings(colAlinement, largestElementLength, len(currentEl))
-                        currentEl = " " * leftSpace + currentEl + " " * rightSpace + "|"
+                    leftSpace, rightSpace = getSideSpacings(colAlinement, largestElementLength, (len(currentEl) - len("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m" + "\033[0m")))
+                    currentEl = " " * leftSpace + currentEl + " " * rightSpace + "|"
                 # If we are not using color just do the same thing as above when we were using colors for when the row or column is not the first each time
                 else:
                     leftSpace, rightSpace = getSideSpacings(colAlinement, largestElementLength, len(currentEl))
@@ -167,6 +175,9 @@ def printTable(matrix, useFieldNames=False, color=None, alignment=0):
     matrixToWorkOn = []
     #This the list in which each row will be one of the final table to be printed
     finalTable = []
+
+    if not isinstance(color, (list)):
+        color = [[color], [color, None]]
 
     largestElementLength = findLargestElement(rows, cols, lengthArray, matrix)
     createMatrix(rows, cols, matrixToWorkOn, matrix)

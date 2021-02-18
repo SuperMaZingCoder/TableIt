@@ -148,8 +148,9 @@ witch will create the following table:
 
 however you can alsow aline every element indevidualy by passing a list shuld the list ever be out of range the last valid element of the alignment list will be used. shuld the alignment for a given column not be a list the alignment will be used for the entire column. so:
 ```python
-TableIt.printTable(myList, useFieldNames=True,  alignment=[[TableIt.centre,
-																								  [TableIt.left, TableIt.right]])````
+TableIt.printTable(myList, useFieldNames=True,  alignment=[[TableIt.centre,[TableIt.left, TableIt.right]])
+```
+																		
 could result in:
 
 ![](ImagesInREADME/advancedAlignment.png)
@@ -162,7 +163,9 @@ There are many uses for TableIt. I first created it as an output library for pri
 ```python
 import TableIt
 ```
+
 and then:
+
 ```python
 TableIt.printTable(myTable)
 ```
